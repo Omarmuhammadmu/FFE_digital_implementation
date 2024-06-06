@@ -9,6 +9,7 @@ module register_file #(
     input  wire                                 rst,
     input  wire                                 load,
     input  wire                                 shift_en,
+    input  wire                                 rd_en,
     input  wire        [ADDR_SIZE-1:0]          rd_addr,
     input  wire signed [IN_OUT_BUS_WIDTH-1:0]   d_in,
     /* ----------- outputs -----------*/
@@ -47,6 +48,6 @@ end
 /* ----------------------------------
     Reading data from memory logic
  ----------------------------------*/
-assign rd_data = data_in_mem[rd_addr];
+assign rd_data = (rd_en)? data_in_mem[rd_addr]: 'b0;
 endmodule
 /* ---------------- End of file  ---------------- */

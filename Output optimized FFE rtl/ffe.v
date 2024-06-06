@@ -49,7 +49,7 @@ localparam L_RD_ADDR_SIZE = 2;
 /* ----------------------------------
         internal connections
  ----------------------------------*/
-wire shift_en;
+wire shift_en, rd_en;
 wire str_out_n_rst_add_reg;
 wire [L_RD_ADDR_SIZE-1 : 0] rd_addr;
 wire [IN_OUT_BUS_WIDTH - 1 : 0] rd_data;
@@ -62,6 +62,7 @@ register_file u_register_file (
     .rst (rst),
     .load (load),
     .shift_en (shift_en),
+    .rd_en (rd_en),
     .rd_addr (rd_addr),
     .d_in (d_in),
     .rd_data (rd_data)
@@ -72,6 +73,7 @@ ffe_controller u_ffe_controller (
     .rst (rst),
     .load (load),
     .shift_en (shift_en),
+    .rd_en (rd_en),
     .str_out_n_rst_add_reg (str_out_n_rst_add_reg),
     .rd_addr (rd_addr)
 );

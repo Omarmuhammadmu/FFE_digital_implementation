@@ -8,6 +8,7 @@ module ffe_controller #(
     input  wire                 load,
     /* ----------- outputs -----------*/
     output reg                  shift_en,
+    output reg                  rd_en,
     output reg                  str_out_n_rst_add_reg,
     output reg  [ADDR_SIZE-1:0] rd_addr
 );
@@ -52,6 +53,7 @@ always @(*) begin
         rd_addr_c = L_ZERO;
         shift_en = 1'b0;
         str_out_n_rst_add_reg = 1'b0;
+        rd_en = 1'b0;
         if(load) begin
             next_state = L_COMPUTE;
         end else begin
@@ -60,6 +62,7 @@ always @(*) begin
     end
     L_COMPUTE : begin
         // Default values
+        rd_en = 1'b1;
         shift_en = 1'b0;
         next_state = L_COMPUTE;
         str_out_n_rst_add_reg = 1'b0;
