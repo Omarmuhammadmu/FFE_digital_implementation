@@ -28,6 +28,9 @@
    Synthesizable    : Y
    Other            : N/A
    -FHDR------------------------------------------------------------------------*/
+
+`define CRITICAL_PATH_BREAKING
+
 module ffe_controller #(
     parameter   DEPTH = 4,
                 ADDR_SIZE = $clog2(DEPTH)
@@ -113,6 +116,9 @@ always @(*) begin
         L_ZERO: begin
             rd_addr_c = L_THREE;
             shift_en = 1'b1;
+            `ifndef CRITICAL_PATH_BREAKING
+                str_out_n_rst_add_reg = 1'b1;
+            `endif 
         end
         L_ONE: begin
             rd_addr_c = L_ZERO;
@@ -125,7 +131,9 @@ always @(*) begin
         end
         L_THREE: begin
             rd_addr_c = L_TWO;
+            `ifdef CRITICAL_PATH_BREAKING
             str_out_n_rst_add_reg = 1'b1;
+            `endif
         end
         default : begin
             next_state = L_RESET_STATE;

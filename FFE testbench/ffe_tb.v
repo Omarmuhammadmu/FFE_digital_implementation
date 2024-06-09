@@ -69,7 +69,7 @@ integer                       test_cases;
 initial
 begin
   $dumpfile("ffe_tb.vcd");
-  $dumpvars ;
+  $dumpvars;
 
   // Initialize 
   initialize();
