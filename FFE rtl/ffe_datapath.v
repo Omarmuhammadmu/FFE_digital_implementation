@@ -29,7 +29,7 @@
    Other            : N/A
    -FHDR------------------------------------------------------------------------*/
 
-`define CRITICAL_PATH_BREAKING
+// `define CRITICAL_PATH_BREAKING
 // `define INCREASE_ACCURACY
 
 module ffe_datapath #(

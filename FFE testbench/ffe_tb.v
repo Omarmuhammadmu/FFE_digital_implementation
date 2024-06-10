@@ -3,12 +3,12 @@
    -----------------------------------------------------------------------------
    FILE NAME : ffe.tb.v
    DEPARTMENT : FFE
-   AUTHOR : Omar Muhammad
+   AUTHORS : Omar Muhammad, Salma Wael, Nermin Hassan 
    AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
    -----------------------------------------------------------------------------
    RELEASE HISTORY
    VERSION  DATE        AUTHOR      DESCRIPTION
-   1.0      2024-06-05  Omar        initial version
+   1.0      2024-06-05    -         initial version
    -----------------------------------------------------------------------------
    KEYWORDS : FFE
    -----------------------------------------------------------------------------
