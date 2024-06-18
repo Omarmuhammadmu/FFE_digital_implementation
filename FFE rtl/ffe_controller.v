@@ -29,7 +29,7 @@
    Other            : N/A
    -FHDR------------------------------------------------------------------------*/
 
-`define CRITICAL_PATH_BREAKING
+// `define CRITICAL_PATH_BREAKING
 
 module ffe_controller #(
     parameter   DEPTH = 4,
